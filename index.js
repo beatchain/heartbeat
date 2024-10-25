@@ -5,7 +5,7 @@ const supabasePrivateKey = process.env.SUPABASE_KEY;
 
 const supabase = createClient(supabaseUrl, supabasePrivateKey);
 
-async function repeatEveryFiveSeconds() {
+async function repeatEveryThreeSeconds() {
   const {error, count} = await supabase
       .from('queue')
       .select('*', {count: 'exact', head: true})
@@ -20,4 +20,4 @@ async function repeatEveryFiveSeconds() {
   }
 }
 
-setInterval(repeatEveryFiveSeconds, 3000);
+setInterval(repeatEveryThreeSeconds, 3000);
