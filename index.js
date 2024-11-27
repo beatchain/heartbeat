@@ -12,6 +12,7 @@ async function repeatEveryThreeSeconds() {
     .from("queue")
     .select("*", { count: "exact", head: true })
     .eq("status", "queued");
+  console.log("🚀 ~ repeatEveryThreeSeconds ~ count:", count);
 
   if (error) {
     console.error(error);
@@ -25,6 +26,7 @@ async function repeatEveryThreeSeconds() {
     .from("queue")
     .select("*", { count: "exact", head: true })
     .eq("status", "queued");
+  console.log("🚀 ~ repeatEveryThreeSeconds ~ devCount:", devCount);
 
   if (devError) {
     console.error(devError);
